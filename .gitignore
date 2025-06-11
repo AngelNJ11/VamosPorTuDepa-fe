@@ -8,8 +8,19 @@
 
 # Node
 /node_modules
-npm-debug.log
-yarn-error.log
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Logs
+*.log
+
+# Environment variables
+.env
+.env.*
+
+# TypeScript build info
+*.tsbuildinfo
 
 # IDEs and editors
 .idea/
@@ -28,15 +39,27 @@ yarn-error.log
 !.vscode/extensions.json
 .history/*
 
-# Miscellaneous
+# Angular cache
 /.angular/cache
 .sass-cache/
 /connect.lock
+
+# Coverage
 /coverage
+
+# Test logs
 /libpeerconnection.log
 testem.log
+
+# Typings
 /typings
+
+# Cypress (si usas testing e2e)
+cypress/screenshots/
+cypress/videos/
 
 # System files
 .DS_Store
 Thumbs.db
+ehthumbs.db
+Icon?
