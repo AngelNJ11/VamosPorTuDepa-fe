@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f8f9fa;
+}
+
+.banner::ng-deep {
+  background: linear-gradient(
+      to right,
+      rgba(183, 28, 28, 0.8),
+      rgba(244, 67, 54, 0.8)
+    ),
+    url('/assets/fondo.jpg') center/cover no-repeat;
+  padding: 4rem 0;
+  color: white;
+  min-height: 350px;
+}

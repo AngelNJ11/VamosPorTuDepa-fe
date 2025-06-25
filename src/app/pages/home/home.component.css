@@ -1,0 +1,35 @@
+/* Banner personalizado */
+/* Banner personalizado con imagen de fondo */
+.banner {
+  background: linear-gradient(
+      to right,
+      rgba(183, 28, 28, 0.8),
+      rgba(244, 67, 54, 0.8)
+    ),
+    url('/assets/fondo.jpg') center/cover no-repeat;
+  padding: 4rem 0;
+  color: white;
+  min-height: 350px;
+}
+
+/* Removido el .banner img porque ya no usas <img> */
+
+
+/* Imagen del banner */
+.banner img {
+  max-height: 300px;
+  object-fit: cover;
+  border: 5px solid white;
+}
+
+/* Botón en tarjetas */
+.card button {
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.card button:hover {
+  background-color: #b71c1c;
+  color: white;
+}

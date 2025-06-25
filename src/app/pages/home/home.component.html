@@ -1,0 +1,51 @@
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-danger px-4">
+  <a class="navbar-brand fw-bold" href="#">VamosPorTuDepa</a>
+  <div class="collapse navbar-collapse justify-content-center">
+    <ul class="navbar-nav">
+      <li class="nav-item"><a class="nav-link" routerLink="/">Home</a></li>
+      <li class="nav-item"><a class="nav-link" routerLink="/">Departamentos</a></li>
+      <li class="nav-item"><a class="nav-link" routerLink="/">Contáctanos</a></li>
+    </ul>
+  </div>
+  <button class="btn btn-light" routerLink="/login">Iniciar Sesión</button>
+</nav>
+
+<!-- BANNER PRINCIPAL -->
+<section class="banner d-flex align-items-center text-white">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-6 text-center text-md-start">
+        <h1 class="display-4 fw-bold">Tu depa ideal te espera</h1>
+        <p class="lead">Encuentra las mejores ofertas aquí</p>
+      </div>
+     
+    </div>
+  </div>
+</section>
+
+<!-- OFERTAS NAVIDEÑAS -->
+<section class="ofertas py-5 bg-light text-center">
+  <h2 class="mb-4">🎄 Ofertas Especiales de Temporada Navideña 🎁</h2>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-4 mb-4" *ngFor="let apto of departamentos">
+        <div class="card shadow h-100">
+          <img [src]="apto.imagen" class="card-img-top" alt="Depa">
+          <div class="card-body">
+            <h5 class="card-title">{{ apto.nombre }}</h5>
+            <p class="card-text">{{ apto.descripcion }}</p>
+            <button class="btn btn-danger w-100">Ver más</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer class="bg-danger text-white text-center py-3 mt-5">
+  <p class="mb-1">&copy; 2025 VamosPorTuDepa. Todos los derechos reservados.</p>
+  <small><a href="#" class="text-white text-decoration-underline">Políticas de privacidad</a></small>
+</footer>
