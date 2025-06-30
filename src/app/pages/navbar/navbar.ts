@@ -40,6 +40,7 @@ cerrarSesion(expirado: boolean = false): void {
   localStorage.removeItem('nombre');
   this.router.navigate(['/']);
   this.cdr.detectChanges();
+  //wa
 }
 
 }
