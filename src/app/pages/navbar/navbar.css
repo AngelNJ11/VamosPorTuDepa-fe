@@ -10,3 +10,7 @@
 button {
   font-weight: bold;
 }
+.bg-gray-custom {
+  background-color: #dddddd; 
+  color: white;
+}

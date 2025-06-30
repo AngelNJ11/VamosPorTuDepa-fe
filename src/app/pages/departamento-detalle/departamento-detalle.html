@@ -1,0 +1,41 @@
+<div class="container mt-4">
+  <!-- Banner -->
+  <div class="mb-4">
+    <img [src]="departamento.imagenPrincipal" alt="Banner" class="img-fluid rounded shadow-sm" />
+  </div>
+
+  <!-- Información detallada -->
+  <div class="row">
+    <div class="col-md-8">
+      <h2 class="fw-bold">{{ departamento.titulo }}</h2>
+      <p class="text-muted">{{ departamento.direccion }} - {{ departamento.distrito }}</p>
+      <p>{{ departamento.descripcion }}</p>
+
+      <div class="row mt-3">
+        <div class="col-6">
+          <strong>Habitaciones:</strong> {{ departamento.numHabitaciones }}
+        </div>
+        <div class="col-6">
+          <strong>Baños:</strong> {{ departamento.numBanos }}
+        </div>
+        <div class="col-6 mt-2">
+          <strong>Precio:</strong> ${{ departamento.precio | number }}
+        </div>
+        <div class="col-6 mt-2">
+          <strong>Tipo:</strong> {{ departamento.tipo }}
+        </div>
+        <div class="col-6 mt-2">
+          <strong>Estado:</strong> {{ departamento.estado }}
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4 mt-4 mt-md-0">
+      <div class="bg-light border rounded p-3">
+        <h6 class="fw-bold">Ubicación (coordenadas)</h6>
+        <p class="mb-1">Lat: {{ departamento.latitud }}</p>
+        <p>Lng: {{ departamento.longitud }}</p>
+      </div>
+    </div>
+  </div>
+</div>
