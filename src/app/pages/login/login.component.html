@@ -1,17 +1,20 @@
 <div class="login-container">
   <div class="login-card">
     <h2>Iniciar Sesión</h2>
-    <form (ngSubmit)="login()">
+    <form (ngSubmit)="login()" autocomplete="off">
       <div class="form-group">
         <label for="email">Correo electrónico</label>
-        <input type="email" id="email" [(ngModel)]="email" name="email" required class="form-control" />
+        <input type="email" id="email" [(ngModel)]="email" name="email" required class="form-control" autocomplete="off"/>
       </div>
       <div class="form-group">
         <label for="password">Contraseña</label>
-        <input type="password" id="password" [(ngModel)]="password" name="password" required class="form-control" />
+        <input type="password" id="password" [(ngModel)]="password" name="password" required class="form-control" autocomplete="off" />
       </div>
       <button type="submit" class="btn btn-danger w-100 mt-3">Entrar</button>
     </form>
+
+    <p class="text-danger mt-2 text-center" *ngIf="error">{{ error }}</p>
+
     <p class="mt-3 text-center">
       ¿No tienes cuenta?
       <a routerLink="/register">Regístrate aquí</a>

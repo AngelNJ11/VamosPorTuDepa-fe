@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { AuthService } from '../../services/auth.service';
+import { RegisterRequest } from '../../models/register-request.model';
 
 @Component({
   selector: 'app-register',
@@ -12,11 +14,13 @@ import { FormsModule } from '@angular/forms';
 })
 export class RegisterComponent {
   name = '';
+  lastname = '';
   email = '';
   phone = '';
-  dob = '';
   password = '';
   confirmPassword = '';
+
+  constructor(private authService: AuthService, private router: Router) {}
 
   register() {
     if (this.password !== this.confirmPassword) {
@@ -24,15 +28,24 @@ export class RegisterComponent {
       return;
     }
 
-    // Aquí podrías hacer la lógica para guardar los datos o enviarlos a un backend
-    console.log('Registrando usuario:', {
-      name: this.name,
+    const data: RegisterRequest = {
+      nombre: this.name,
+      apellido: this.lastname,
       email: this.email,
-      phone: this.phone,
-      dob: this.dob,
-      password: this.password
-    });
+      contrasena1: this.password,
+      contrasena2: this.confirmPassword,
+      telefono: this.phone
+    };
 
-    alert('¡Registro exitoso!');
+    this.authService.register(data).subscribe({
+      next: () => {
+        alert('¡Registro exitoso!');
+        this.router.navigate(['/login']);
+      },
+      error: err => {
+        console.error('Error en registro', err);
+        alert('Hubo un error al registrar. Revisa los datos.');
+      }
+    });
   }
 }
