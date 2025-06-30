@@ -25,17 +25,15 @@ login() {
     contrasena: this.password
   };
 
-  this.authService.login(datos).subscribe({
-    next: res => {
-      console.log('Login OK', res);
-      localStorage.setItem('token', res.token);
-      localStorage.setItem('nombre', res.usuario.nombre);
-      this.router.navigate(['/']);
-    },
-    error: err => {
-      console.error(err);
-      this.error = 'Credenciales incorrectas o error del servidor.';
-    }
-  });
+this.authService.login(datos).subscribe({
+  next: res => {
+    console.log('Login OK', res);
+    this.router.navigate(['/']);
+  },
+  error: err => {
+    console.error(err);
+    this.error = 'Credenciales incorrectas o error del servidor.';
+  }
+});
 }
 }
