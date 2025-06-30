@@ -9,15 +9,14 @@
     </ul>
   </div>
 
-  <div class="d-flex align-items-center gap-2">
-    <ng-container *ngIf="nombre; else loginBtn">
-      <span class="text-white fw-bold me-2">{{ nombre }}</span>
-      <button class="btn btn-light" (click)="cerrarSesion()">Cerrar Sesión</button>
-    </ng-container>
+<div class="d-flex align-items-center gap-2">
+  <ng-container *ngIf="sesionActiva; else loginBtn">
+    <span class="text-white fw-bold me-2">{{ nombre }}</span>
+    <button class="btn btn-light" (click)="cerrarSesion()">Cerrar Sesión</button>
+  </ng-container>
 
-    <ng-template #loginBtn>
-      <button class="btn btn-light" type="button" [routerLink]="['/login']">Iniciar Sesión</button>
-
-    </ng-template>
-  </div>
+  <ng-template #loginBtn>
+    <button class="btn btn-light" type="button" [routerLink]="['/login']">Iniciar Sesión</button>
+  </ng-template>
+</div>
 </nav>
