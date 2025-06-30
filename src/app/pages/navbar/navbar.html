@@ -1,22 +1,24 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-danger px-4">
-  <a class="navbar-brand fw-bold" routerLink="/">VamosPorTuDepa</a>
+<nav class="navbar navbar-expand-lg navbar-dark bg-gray-custom  px-4 ">
+  <a class="navbar-brand fw-bold text-dark" routerLink="/">VamosPorTuDepa</a>
 
-  <div class="collapse navbar-collapse justify-content-center">
+  <div class="collapse navbar-collapse justify-content-center text-dark">
     <ul class="navbar-nav">
-      <li class="nav-item"><a class="nav-link" routerLink="/">Home</a></li>
-      <li class="nav-item"><a class="nav-link" routerLink="/">Departamentos</a></li>
-      <li class="nav-item"><a class="nav-link" routerLink="/">Contáctanos</a></li>
+      <li class="nav-item "><a class="nav-link text-dark" routerLink="/">Home</a></li>
+      <li class="nav-item "><a class="nav-link text-dark" routerLink="/departamentos">Departamentos</a></li>
+      <li class="nav-item "><a class="nav-link text-dark" routerLink="/contactanos">Contáctanos</a></li>
     </ul>
   </div>
 
-<div class="d-flex align-items-center gap-2">
-  <ng-container *ngIf="sesionActiva; else loginBtn">
-    <span class="text-white fw-bold me-2">{{ nombre }}</span>
-    <button class="btn btn-light" (click)="cerrarSesion()">Cerrar Sesión</button>
-  </ng-container>
 
-  <ng-template #loginBtn>
-    <button class="btn btn-light" type="button" [routerLink]="['/login']">Iniciar Sesión</button>
-  </ng-template>
-</div>
+  <div class="d-flex align-items-center gap-2">
+    <ng-container *ngIf="sesionActiva; else loginBtn">
+      <span class="text-white fw-bold me-2">{{ nombre }}</span>
+      <button class="btn btn-danger" (click)="cerrarSesion()">Cerrar Sesión</button>
+    </ng-container>
+
+    <ng-template #loginBtn>
+      <button class="btn btn-danger" type="button" [routerLink]="['/login']">Iniciar Sesión</button>
+
+    </ng-template>
+  </div>
 </nav>

@@ -1,0 +1,24 @@
+<!-- Filtros -->
+<div class="bg-light py-3 px-4 d-flex flex-wrap gap-2 align-items-center border-bottom">
+    <input type="number" class="form-control w-auto" placeholder="Habitaciones" />
+    <input type="number" class="form-control w-auto" placeholder="Baños" />
+    <input type="text" class="form-control w-auto" placeholder="Distrito" />
+    <button class="btn btn-danger">Buscar</button>
+</div>
+
+<div class="px-4 py-3">
+    <h5 class="fw-bold">Departamentos</h5>
+</div>
+
+<div class="row px-4 gy-4">
+    <div class="col-md-4 col-sm-6" *ngFor="let depto of departamentos" (click)="verDetalle(depto.id)"
+        style="cursor: pointer;">
+        <div class="card shadow-sm">
+            <div class="bg-secondary" style="height: 140px;"></div>
+            <div class="card-body">
+                <h6 class="card-title fw-bold">{{ depto.nombre }}</h6>
+                <p class="card-text fw-semibold">{{ depto.precio }}</p>
+            </div>
+        </div>
+    </div>
+</div>
